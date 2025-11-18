@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KA 53 BR</title>
+    <link rel="stylesheet" type="text/css" href="Vers0.css">
+</head>
+
+<body>
+    <div align="center">
+        <a id="ultimaRevision"></a>
+        <div class="botonesSuperiores" align="center">
+            <button type="button" id="miBtnBandera" style="font-weight:bold;" data-translate-key="sort_by_flag">Bandera</button>
+            <button type="button" id="miBtn" data-translate-key="sort_by_player">Ordenar por jugador</button>
+            <button type="button" id="miBtnTropa" data-translate-key="sort_by_troop">Ordenar por tropa</button>
+            <button type="button" id="miBtnColoniaDestino" data-translate-key="sort_by_destination">Ordenar por Destino</button>
+            <button type="button" id="miBtnColoniaOrigen" data-translate-key="sort_by_origin">Ordenar por Origen</button>
+        </div>
+        <a id="totalDeAtaques"></a>
+    </div>
+
+    <div id="filtro" align="center">
+        <label for="txtBuscar">Buscar: </label><input type="text" id="txtBuscar">
+        <input type="radio" name="opcion" value="destino" checked id="destino"><label for="destino">Por destino</label>
+        <input type="radio" name="opcion" value="Origen" id="origen"><label for="origen">Por origen</label>
+        <input type="button" value="Filtrar" id="btnBuscar">
+    </div>
+
+    <div id="side-panel-container">
+        <button id="btn-close-panel">×</button>
+        <div id="panel-ocultacion">
+            <div class="acordeon">
+                <button class="acordeon-header">Configuración General</button>
+                <div class="acordeon-panel">
+                    <h4>Idioma</h4>
+                    <button onclick="setLanguage('es')">Español</button>
+                    <button onclick="setLanguage('en')">English</button>
+                    <button onclick="setLanguage('pt')">Português</button>
+
+                    <h4>Nuevos Ataques</h4>
+                    <input type="checkbox" id="chk-highlight-new">
+                    <label for="chk-highlight-new">Mostrar icono en nuevos ataques</label>
+
+                    <h4>Notas de Ataques</h4>
+                    <input type="checkbox" id="chk-clean-notes">
+                    <label for="chk-clean-notes">Limpiar notas antiguas</label>
+                </div>
+
+                <button class="acordeon-header">Reglas de Ocultación</button>
+                <div class="acordeon-panel">
+                    <h4>Ocultar por Jugador</h4>
+                    <input type="text" id="txt-ignorar-jugador" placeholder="Nombre del jugador...">
+                    <button id="btn-add-jugador">Añadir</button>
+                    <div id="lista-jugadores-ignorados"></div>
+                    <button id="btn-limpiar-jugadores">Limpiar Lista</button>
+
+                    <h4>Ocultar por Tropa</h4>
+                    <div id="lista-tropas-ignoradas"></div>
+                </div>
+
+                <button class="acordeon-header">Jugadores de Interés</button>
+                <div class="acordeon-panel">
+                    <input type="text" id="txt-highlight-player" placeholder="Jugador...">
+                    <button id="btn-add-highlight-player">Añadir</button>
+                    <div id="lista-jugadores-resaltados"></div>
+                    <button id="btn-limpiar-jugadores-resaltados">Limpiar Lista</button>
+
+                    <input type="checkbox" id="chk-resaltar-jugadores">
+                    <label for="chk-resaltar-jugadores">Resaltar ataques</label>
+
+                    <input type="checkbox" id="chk-filtrar-jugadores">
+                    <label for="chk-filtrar-jugadores">Mostrar solo ataques listados</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ataquesXXX" align="center"></div>
+
+    <button id="fab-open-panel" title="Abrir panel">I</button>
+
+    <script src="index.js"></script>
+</body>
+</html>
